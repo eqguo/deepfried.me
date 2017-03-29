@@ -2,9 +2,41 @@
 <html>
   <head>
     <title>The Deep Fryer</title>
+    <link rel=icon href=favicon.png>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   </head>
-  
+
   <body>
-    Welcome to the Deep Fryer.
+    <h1 class="text-center">The Deep Fryer</h1>
+    <!-- https://s-media-cache-ak0.pinimg.com/originals/5d/63/ce/5d63ce6a068d80bdf5ce761cb33246c2.gif -->
+    <image class="img-responsive center-block img-rounded" src="fries.gif">
+
+    <div class="col-md-12" style="padding: 10px 50px 0 50px;">
+      <div class="form-group">
+        <label for="friedFood">Does deep frying it make it better?</label>
+        <input type="text" class="form-control" id="friedFood" placeholder="Type in a food to find out">
+      </div>
+      <button class="btn btn-default" onclick="fryIt()">Submit</button>
+    </div>
+
+    <h2 class="text-center" id="yes"></h2>
+
+    <script>
+      function fryIt() {
+        var yes = document.getElementById("yes");
+        if (document.getElementById("friedFood").value === "") {
+          yes.innerHTML = "";
+          alert("Please enter a food.");
+        }
+        else if (yes.innerHTML.includes("YES")) {
+          yes.innerHTML += "!";
+        } else {
+          yes.innerHTML = "YES!"
+        }
+      }
+    </script>
   </body>
+
 </html>
